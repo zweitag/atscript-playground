@@ -6,6 +6,7 @@
     "typeAssertions": true,
     "typeAssertionModule": "assert",
     "annotations": true,
-    "sourceMaps": "file"
+    "sourceMaps": "file",
+    "memberVariables": true
   }
 }

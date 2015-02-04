@@ -44,6 +44,7 @@ gulp.task('build', ['build/src', 'build/test']);
 // WATCH FILES FOR CHANGES
 gulp.task('watch', function() {
   gulp.watch(PATH.SRC, ['build']);
+  gulp.watch(PATH.TEST, ['build']);
 });
 
 
@@ -57,4 +58,4 @@ gulp.task('serve', function() {
 });
 
 
-gulp.task('default', ['serve', 'watch']);
+gulp.task('default', ['build', 'serve', 'watch']);
