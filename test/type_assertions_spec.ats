@@ -1,0 +1,49 @@
+describe('Type Assertions', function() {
+
+  describe('Inline Type Assertions', function() {
+
+    it('assigns values of the correct type', function() {
+      var myNumber:number = 42;
+      expect(myNumber).toEqual(42);
+    });
+
+    it('raises an error if assigning values of the wrong type', function() {
+      expect(function() {
+        var myNumber:number = 'forty two';
+      }).toThrow(new Error('Expected an instance of {name: "number"}, got "forty two"!'));
+    });
+
+  });
+
+  describe('Parameter Type Assertions', function() {
+    var doubleIt = function (aNumber:number) { return aNumber * 2; };
+
+    it('uses parameters of the correct type', function() {
+      var doubledNumber = doubleIt(2);
+      expect(doubledNumber).toEqual(4);
+    });
+
+    it('raises an error if using parameters of the wrong type', function() {
+      expect(function() {
+        doubleIt('two');
+      }).toThrow();
+    });
+
+  });
+
+  describe('Return Type Assertions', function() {
+    var returnNumber = function(input):number { return input > 5 ? input : 'too low' };
+
+    it('returns the correct type', function() {
+      var returnedNumber = returnNumber(6);
+      expect(returnedNumber).toEqual(6);
+    });
+
+    it('raises an error if returning the wrong type', function() {
+      expect(function() {
+        returnNumber(3);
+      }).toThrow();
+    });
+  });
+
+});
