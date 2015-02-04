@@ -1,0 +1,40 @@
+describe('Complex Types', function() {
+  describe('Defining assert functions', function() {
+    class Duck {
+      quack() { return 'QUACK!' }
+    }
+
+    class Goose {
+      quack() { return 'HONK!' }
+    }
+
+    class Tiger {
+      roar() { return 'ROAR!' }
+    }
+
+    var Quackable = assert.define('Quackable', function(quackableType) {
+      assert(quackableType.quack).is(Function);
+    });
+
+    var getAnimalSound = function(animal:Quackable) {
+      return animal.quack();
+    }
+
+    it('works for quackable animals', function() {
+      var duck = new Duck();
+      var goose = new Goose();
+
+      expect(getAnimalSound(duck)).toEqual('QUACK!');
+      expect(getAnimalSound(goose)).toEqual('HONK!');
+    });
+
+    it('raises an error if the animal is not quackable', function() {
+      var tiger = new Tiger();
+
+      expect(function(){
+        getAnimalSound(tiger);
+      }).toThrow();
+    });
+  });
+
+});
