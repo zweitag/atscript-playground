@@ -1,0 +1,29 @@
+describe('Field Annotations', function() {
+  var point;
+
+  class Point {
+    x:number;
+    y:number;
+
+    constructor (x,y) {
+      this.x = x;
+      this.y = y;
+    }
+  }
+
+  beforeEach(function() {
+    point = new Point(1,2);
+  });
+
+
+  it('allows to set values of the correct type', function() {
+    point.x = 10;
+    expect(point.x).toEqual(10);
+  });
+
+  it('raises an error when setting values of a wrong type', function() {
+    expect(function() {
+      point.x = 'ten';
+    }).toThrow();
+  });
+});
