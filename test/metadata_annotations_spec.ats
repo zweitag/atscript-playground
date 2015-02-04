@@ -1,0 +1,17 @@
+describe('Metadata Annotations', function() {
+  it('annotates a class with an instance', function() {
+    class Metadata {
+      constructor(name, date) {
+        this.name = name;
+        this.date = date;
+      }
+    }
+
+    @Metadata('MyMetadata', new Date())
+    class MyClass {
+    }
+
+    expect(MyClass.annotations[0].name).toEqual('MyMetadata')
+  });
+
+});
