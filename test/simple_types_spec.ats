@@ -1,0 +1,86 @@
+describe('Simple Types', function() {
+
+  describe('Void', function() {
+    it('works when returning undefined', function() {
+      var returnsUndefined = function():void { };
+      expect(returnsUndefined()).toEqual(undefined);
+    });
+
+    it('raises an error when returning something != undefined', function() {
+      var returnsSomething = function():void { return 'Something'; };
+      expect(function() {
+        returnsSomething();
+      }).toThrow()
+    });
+  });
+
+  describe('Any', function() {
+    it('works with everything', function() {
+      expect(function() {
+        var aString:any = '';
+        var aBoolean:any = true;
+        var aNumber:any = 12;
+        var aFunction:any = function(){};
+        var aNull:any = null;
+        var anUndefined:any = undefined;
+      }).not.toThrow();
+    });
+  });
+
+  describe('String', function() {
+    it('works when using a string', function() {
+      var aString:string = 'Hello';
+      expect(aString).toEqual('Hello');
+    });
+
+    it('raises an error when using something else', function() {
+      expect(function() {
+        var aString:string = 1;
+      }).toThrow()
+    });
+  });
+
+  describe('Number', function() {
+    it('works when using a number', function() {
+      var aNumber:number = 1;
+      expect(aNumber).toEqual(1);
+    });
+
+    it('raises an error when using something else', function() {
+      expect(function() {
+        var aNumber:number = 'Hello';
+      }).toThrow()
+    });
+  });
+
+  describe('Boolean', function() {
+    it('works when using a boolean', function() {
+      var aBoolean:boolean = true;
+      expect(aBoolean).toEqual(true);
+    });
+
+    it('raises an error when using something else', function() {
+      expect(function() {
+        var aBoolean:boolean = 'Hello';
+      }).toThrow()
+    });
+  });
+
+  describe('With Classes', function() {
+    class MyClass {
+      constructor() { this.msg = 'Hello'; }
+    };
+
+    it('works when using an instance of a class', function() {
+      var myInstance:MyClass = new MyClass();
+      expect(myInstance.msg).toEqual('Hello');
+    });
+
+    it('raises an error when using something else', function() {
+      expect(function() {
+        var myInstance:MyClass = 'Hello';
+      }).toThrow()
+    });
+
+  });
+});
