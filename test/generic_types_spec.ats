@@ -1,0 +1,19 @@
+describe('Generic Types', function() {
+  describe('Array Types', function() {
+    var takesAnArrayOfNumbers = function(numbers:Array<number>){ return numbers; }
+
+    it('works when given numbers', function() {
+      expect(takesAnArrayOfNumbers([1])).toEqual([1]);
+      expect(takesAnArrayOfNumbers([1,1])).toEqual([1,1]);
+      expect(takesAnArrayOfNumbers([])).toEqual([]);
+    });
+
+    it('raises an error if given something else', function() {
+      expect(function() {
+        takesAnArrayOfNumbers(['Hello'])
+      }).toThrow();
+
+    });
+
+  });
+});
