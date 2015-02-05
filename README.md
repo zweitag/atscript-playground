@@ -1,45 +1,46 @@
 ## AtScript Playground
 
 This is an empty repo to make it easy to experiment with [AtScript].
-
+Please note that this is a fork of the original [AtScript Playground](github.com/angular/atscript-playground) by the Angular team.
+It includes
+* an updated [Traceur Version](https://github.com/google/traceur-compiler)
+* a slightly modified [RTTS-Assert Version](https://github.com/stsc3000/assert)
+  to support at least Array as a generic type
+* a test suite to explain AtScript functionality
 
 ### Initial setup
 
 ```bash
 # Clone the repo...
-git clone https://github.com/vojtajina/atscript-playground.git
+git clone https://github.com/zweitag/atscript-playground.git
 cd atscript-playground
 
-# Then, you need to install all the dependencies...
+# Then, you need to install all the dependencies... (sudo if you need to)
 npm install
-
-# If you want to be able to use global commands `karma` and `gulp`...
-npm install -g karma-cli gulp
 ```
 
-### The minimal example
-
-Our example consists of two files:
-
-* `atscript-playground/src/something.ats` defines a simple class that returns the sum of two input values
-* `atscript-playground/src/main.ats` imports that class and prints a message to the console
- 
-### Running the example in the browser
-To run in the browser, you need to first build the project. This creates a `build/` directory that contains the transpiled `*.js` files that are created from your AtScript project.
-
-```bash
-# Do initial build, start a webserver and re-build on every file change...
-gulp build serve watch
+### Getting Started
+In order to start experimenting with AtScript, please
 ```
-Open a browser and look in the console log to see the result.
-
-### Running the tests
-The tests are in `atscript-playground/test/something_spec.ats`. Run them using Karma, like so:
-```bash
-karma start
+# Run Gulp to watch the src folder and start a server on port 8000
+gulp
 ```
-Karma opens a browser window for running tests. To see the actual test output (and errors), look for the log in the terminal window where you issued the `karma start` command.
+You may then experiment in `src/main.ats`.
 
+You will find a set of tests for many of AtScript's features in the `test`
+directory. In order to run the tests, please
+
+```
+# Run Gulp to watch and compile the tests
+gulp
+```
+
+and in another shell
+
+```
+# Run test test suite
+npm test
+```
 ### What are all the pieces involved?
 
 #### [Traceur]
