@@ -30,6 +30,7 @@ In order to start experimenting with AtScript, please
 # Run Gulp to watch the src folder and start a server on port 8000
 gulp
 ```
+and point your browser to `localhost:8000`.
 You may then experiment in `src/main.ats`. If you want source maps use
 ```bash
 gulp --sourceMaps
