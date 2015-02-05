@@ -1,7 +1,7 @@
 ## AtScript Playground
 
 This is an empty repo to make it easy to experiment with [AtScript].
-Please note that this is a fork of the original [AtScript Playground](github.com/angular/atscript-playground) by the Angular team.
+Please note that this is a fork of the original [AtScript Playground](https://github.com/angular/atscript-playground) by the Angular team.
 It includes
 * an updated [Traceur Version](https://github.com/google/traceur-compiler)
 * a slightly modified [RTTS-Assert Version](https://github.com/stsc3000/assert)
@@ -12,6 +12,8 @@ The repo was adjusted in conjunction with a yet to be linked blog post.
 
 ### Initial setup
 
+Prerequisites: [Node.js](http://nodejs.org/download/)
+
 ```bash
 # Clone the repo...
 git clone https://github.com/zweitag/atscript-playground.git
@@ -19,6 +21,7 @@ cd atscript-playground
 
 # Then, you need to install all the dependencies... (sudo if you need to)
 npm install
+npm install -g karma-cli gulp
 ```
 
 ### Getting Started
