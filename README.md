@@ -8,6 +8,8 @@ It includes
   to support at least Array as a generic type
 * a test suite to explain AtScript functionality
 
+The repo was adjusted in conjunction with a yet to be linked blog post.
+
 ### Initial setup
 
 ```bash
@@ -21,23 +23,26 @@ npm install
 
 ### Getting Started
 In order to start experimenting with AtScript, please
-```
+```bash
 # Run Gulp to watch the src folder and start a server on port 8000
 gulp
 ```
-You may then experiment in `src/main.ats`.
+You may then experiment in `src/main.ats`. If you want source maps use
+```bash
+gulp --sourceMaps
+```
 
 You will find a set of tests for many of AtScript's features in the `test`
 directory. In order to run the tests, please
 
-```
+```bash
 # Run Gulp to watch and compile the tests
 gulp
 ```
 
 and in another shell
 
-```
+```bash
 # Run test test suite
 npm test
 ```
