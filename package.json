@@ -25,7 +25,8 @@
     "karma-chrome-launcher": "^0.1.5",
     "karma-jasmine": "^0.2.2",
     "karma-requirejs": "^0.2.2",
-    "karma-traceur-preprocessor": "^0.4.0"
+    "karma-traceur-preprocessor": "^0.4.0",
+    "gulp-util": "3.0.3"
   },
   "scripts": {
     "test": "karma start"

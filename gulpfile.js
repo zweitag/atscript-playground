@@ -2,8 +2,14 @@ var gulp = require('gulp');
 var traceur = require('gulp-traceur');
 var connect = require('gulp-connect');
 var rename_ = require('gulp-rename');
+var util = require('gulp-util');
 
 var TRACEUR_OPTIONS = require('./config').traceur;
+
+if (util.env.sourceMaps) {
+  TRACEUR_OPTIONS.sourceMaps = 'inline';
+}
+
 var PATH = {
   BUILD: './build/',
   SRC: './src/**/*.ats',
