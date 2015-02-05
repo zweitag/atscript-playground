@@ -43,7 +43,7 @@ gulp
 and in another shell
 
 ```bash
-# Run test test suite
+# Run the test suite
 npm test
 ```
 ### What are all the pieces involved?
